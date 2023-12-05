@@ -12,19 +12,6 @@ spring:
             non_contextual_creation: true
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost/db_demo
-    username: postgres
-    password: 123456
-
-  cloud:
-    vault:
-      application:
-        name: business-api-employee
-      scheme: http
-      authentication: TOKEN
-      host: localhost
-      token: '00000000-0000-0000-0000-000000000000'
-      port: 8200
 
 application:
   backend:
