@@ -1,13 +1,4 @@
 spring:
-  
-  application:
-    name: 'business-api-employee'
-
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8888
-
   jpa:
     database: postgresql
     show-sql: false
