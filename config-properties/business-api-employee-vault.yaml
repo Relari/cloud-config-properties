@@ -13,8 +13,6 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost/db_demo
-    username: postgres
-    password: 123456
 
 application:
   backend:
@@ -30,6 +28,7 @@ application:
         category: INTERNAL_ERROR
 
 server:
+  port: 8081
   error:
     include-message: never
 
