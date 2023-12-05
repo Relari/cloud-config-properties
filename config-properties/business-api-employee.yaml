@@ -19,7 +19,7 @@ spring:
   cloud:
     vault:
       application:
-        name: ${spring.application.name}
+        name: business-api-employee
       scheme: http
       authentication: TOKEN
       host: localhost
