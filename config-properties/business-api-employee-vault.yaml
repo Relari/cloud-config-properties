@@ -1,4 +1,13 @@
 spring:
+  
+  application:
+    name: 'business-api-employee'
+
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888
+
   jpa:
     database: postgresql
     show-sql: false
@@ -13,6 +22,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost/db_demo
+    username: postgres
+    password: 123456
 
 application:
   backend:
@@ -35,3 +46,27 @@ server:
 logging:
   level:
     com.pe.relari.business.api: INFO
+
+application:
+  info:
+    name: '@project.name@'
+    version: '@project.version@'
+    description: '@project.description@'
+  api:
+    path: '/business/api/v1/employees'
+
+springdoc:
+  api-docs:
+    path: '${application.api.path}/openapi'
+
+  swagger-ui:
+    path: '${application.api.path}/swagger-ui.html'
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:@project.version@
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8090/eureka/'
+
+management.endpoints.web.exposure.include: 'health'
