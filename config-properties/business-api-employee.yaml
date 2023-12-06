@@ -10,11 +10,11 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost/db_demo
-#    username: postgres
-#    password: 123456
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/db_demo
+    username: postgres
+    password: 123456
 
 application:
   backend:
