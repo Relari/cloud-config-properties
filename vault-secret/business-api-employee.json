@@ -1,0 +1,5 @@
+{
+  "spring.datasource.url": "jdbc:postgresql://localhost/db_demo",
+  "spring.datasource.username": "postgres",
+  "spring.datasource.password": "123456"
+}
