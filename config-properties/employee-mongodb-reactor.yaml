@@ -3,9 +3,9 @@ spring:
     mongodb:
       database: db_demo
       host: localhost
-      password: 123456
       port: 27017
 
+application:
   http-client:
     employee:
       base-url: http://localhost:${server.port}${application.api.path}
@@ -15,4 +15,4 @@ server:
 
 logging:
   level:
-    com.pe.relari.business.mongodb: TRACE
+    com.pe.relari: TRACE
