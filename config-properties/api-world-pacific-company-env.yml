@@ -1,0 +1,14 @@
+#WPC_DB: wpc_saneamiento_ambiental_dev
+WPC_DB: saneamientoambiental
+
+DB_TYPE: mysql
+DB_DRIVER: com.mysql.cj.jdbc.Driver
+DB_URL: jdbc:mysql://localhost:3306/${WPC_DB}
+DB_USER: root
+DB_PASS: ''
+
+#DB_TYPE: postgresql
+#DB_DRIVER: org.postgresql.Driver
+#DB_URL: jdbc:postgresql://localhost/${WPC_DB}
+#DB_USER: postgres
+#DB_PASS: '123456'

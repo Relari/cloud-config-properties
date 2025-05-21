@@ -1,0 +1,118 @@
+spring:
+  jpa:
+    database: ${DB_TYPE}
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        format_sql: true
+  datasource:
+#    jndi-name: java:/WoldPacificCompanyDS
+    driver-class-name: ${DB_DRIVER}
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+
+  config:
+    import: api-world_pacific_company-env.yml
+
+application:
+  info:
+    name: '@project.name@'
+    version: '@project.version@'
+    description: '@project.description@'
+  api:
+    path: '/api-world_pacific_company/v1'
+    autenticacion:
+      path: ${application.api.path}/autenticaciones
+    confirmacion:
+      path: ${application.api.path}/confirmaciones
+    contacto:
+      path: ${application.api.path}/contactos
+    empresa:
+      path: ${application.api.path}/empresas
+    renovacion:
+      path: ${application.api.path}/renovaciones
+    servicio:
+      path: ${application.api.path}/servicios
+    sesion:
+      path: ${application.api.path}/sesiones
+    transaccion:
+      path: ${application.api.path}/transacciones
+    usuario:
+      path: ${application.api.path}/usuarios
+  errors:
+    EMPRESA_ACTIVAR:
+      description: 'Error al activar la empresa.'
+      category: NOT_FOUND
+    EMPRESA_INACTIVAR:
+      description: 'Error al inactivar la empresa.'
+      category: NOT_FOUND
+    EMPRESA_NOT_FOUND:
+      description: 'No se encontro a la empresa.'
+      category: NOT_FOUND
+    TRANSACCION_NOT_FOUND:
+      description: 'No se encontro la transaccion.'
+      category: INTERNAL_ERROR
+    TRANSACCION_ELIMINADA:
+      description: 'La transaccion ya fue eliminada.'
+      category: INTERNAL_ERROR
+    TRANSACCION_CONFIRMADA:
+      description: 'La transaccion ya fue confirmada.'
+      category: INTERNAL_ERROR
+    SERVICIO_NOT_FOUND:
+      description: 'No se encontro al servicio.'
+      category: INTERNAL_ERROR
+    SERVICIO_DELETE:
+      description: 'Error al eliminar al servicio.'
+      category: INTERNAL_ERROR
+    USUARIO_NOT_FOUND:
+      description: 'No se encontro al usuario.'
+      category: INTERNAL_ERROR
+    USUARIO_ACCESS_DENIED:
+      description: 'El usuario no debe estar desabilitado.'
+      category: INTERNAL_ERROR
+    USUARIO_ACTIVAR:
+      description: 'El usuario se encuentra activo.'
+      category: INTERNAL_ERROR
+    USUARIO_INACTIVAR:
+      description: 'El usuario se encuentra desabilitado.'
+      category: INTERNAL_ERROR
+    USUARIO_EXISTS:
+      description: 'El usuario se encuentra registrado.'
+      category: CONFLICT
+    CONTRASENIA_CAMBIAR:
+      description: 'Se requiere cambiar la contrasenia.'
+      category: CONFLICT
+    CONTRASENIA_NO_EQUALS:
+      description: 'Las nuevas contrasenia no son iguales.'
+      category: CONFLICT
+    CONTACTO_NOT_FOUND:
+      description: 'No se encontro al contacto.'
+      category: NOT_FOUND
+    SESSION_INVALID:
+      description: 'Session Invalida.'
+      category: INTERNAL_ERROR
+    SESSION_EXPIRED:
+      description: 'Session Expirada.'
+      category: INTERNAL_ERROR
+
+springdoc:
+  api-docs:
+    path: '${application.api.path}/openapi'
+
+  swagger-ui:
+    path: '${application.api.path}/swagger-ui.html'
+
+server:
+#  port: 8081
+  error:
+    include-message: always
+
+logging:
+  level:
+    com.world.pacific.company: TRACE
